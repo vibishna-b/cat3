@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: antiquewhite;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            padding: 60px;
+            text-align: center;
+            background: plum;
+            color: black;
+            font-family: Cambria;
+        }
+
+        input[type=text],
+        input[type=email] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+            font-family: 'Lucida Sans';
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus {
+            background-color: antiquewhite;
+            outline: none;
+        }
+
+        .registerbtn {
+            background-color: #aa3e04;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+    </style>
+    <script>
+         function test() {
+            const name = document.getElementById("empname");
+      if (!name.value.match(/^[A-Za-z]+$/)) {
+        alert("Name should be only in characters");
+        name.focus();
+        return false;
+      }
+         }
+         </script>
+</head>
+
+<body>
+    <div class="header">
+        <h2>INFOSYS SPRING </h2>
+    </div>
+    <form action="/adduser">
+        <label for="empid">ID</label>
+        <input type="text" placeholder="Enter the id" name="empid" id="empid" required><br>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter the name" name="empname" id="empname" required> <br>
+        <label for="empDes">Designation</label>
+        <input type="text" placeholder="Enter the Designation" name="empDes" id="empDes" required><br>
+        <label for="empdep">Department</label>
+        <input type="text" placeholder="Enter the department" name="empdep" id="empdep" required><br>
+        <label for="empsal">Salary</label>
+        <input type="text" placeholder="Enter your salary" name="empsal" id="empsal" required><br>
+        <label for="emploc">Location</label>
+        <input type="text" placeholder="Enter your Location" name="emploc" id="emploc" required><br>
+      
+        <button type="submit " class="registerbtn" onclick="test()">Add user</button><br>
+        <a href="./" style="color:darkolivegreen">back to home page</a><br>
+        {{#if mesg}}
+        <h3> Data inserted</h3>
+        {{/if}}
+        {{#if checkmesg}}
+        <h3>id already present</h3>
+        {{/if}}
+    </form>
+</body>
+
+</html>

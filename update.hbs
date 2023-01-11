@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: antiquewhite;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .header {
+  padding: 60px;
+  text-align: center;
+  background: plum;
+  color:black;
+  font-family:Cambria;
+} .header {
+            padding: 60px;
+            text-align: center;
+            background: plum;
+            color: black;
+            font-family: Cambria;
+        }
+
+        input[type=text],
+        input[type=email] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+            font-family: 'Lucida Sans';
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus {
+            background-color: antiquewhite;
+            outline: none;
+        }
+
+        .registerbtn {
+            background-color: #aa3e04;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>INFOSYS SPRING </h1>
+    </div>
+    <form action="/updatesearch">
+        <label for="id">Enter your Id</label>
+        <input type="text" placeholder="Enter you Id" name="id" id="id" required>
+        <button type="submit">Search</button>
+        <a href="./" style="color:darkolivegreen">back to home page</a><br>
+
+        {{#if umesg}}
+        <h3>Data updated!</h3>
+        {{/if}}
+
+
+        {{#if mesg2}}
+        <h3>Data Not Found!</h3>
+        {{/if}}
+
+
+    </form>
+    {{#if mesg1}}
+    <form action="/updateuser">
+    {{#data}}
+    <label for="empid">ID</label>
+        <input type="text" placeholder="Enter the id" name="empid"value="{{empid}}" id="empid" required><br>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter the name" name="empname"value="{{empname}}" id="empname" required> <br>
+        <label for="empDes">Designation</label>
+        <input type="text" placeholder="Enter the Designation" name="empDes" value="{{empDes}}"id="empDes" required><br>
+        <label for="empdep">Department</label>
+        <input type="text" placeholder="Enter the department" name="empdep"value="{{empdep}}" id="empdep" required><br>
+        <label for="empsal">Salary</label>
+        <input type="text" placeholder="Enter your salary" name="empsal" value="{{empsal}}" id="empsal" required><br>
+        <label for="emploc">Salary</label>
+        <input type="text" placeholder="Enter your Location" name="emploc" value="{{emploc}}"id="emploc" required><br>
+      
+      <button type="submit ">update user</button><br>
+      {{/data}}<br>
+      <a href="./" style="color:darkolivegreen">back to home page</a><br>
+    </form>
+    {{/if}}
+</body>
+
+
+</html>
